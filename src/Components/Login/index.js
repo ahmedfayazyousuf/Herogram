@@ -9,8 +9,6 @@ const Login = () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        
-
         var validRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
     
         if (email === "" || !email.match(validRegex)) {
@@ -24,27 +22,22 @@ const Login = () => {
             return;
         }
 
-        // Query Firestore collection "Users" for the provided email and password
         firebase.firestore().collection('Users')
             .where('Email', '==', email)
             .where('Password', '==', password)
             .get()
             .then((querySnapshot) => {
                 if (!querySnapshot.empty) {
-                    // User exists with provided credentials
                     querySnapshot.forEach((doc) => {
                         const userData = doc.data();
-                        // Navigate to Dashboard page and pass user's document data
                         navigate('/Dashboard', { state: { userData } });
                     });
                 } else {
-                    // No user found with provided credentials, navigate to Loser
                     navigate('/Loser');
                 }
             })
             .catch((error) => {
                 console.error('Error verifying user:', error);
-                // Handle error if necessary
             });
     }
 

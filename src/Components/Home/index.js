@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 
-const Success = () => {
+const Home = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100vh", justifyContent: "center", alignItems: "center", flexWrap: 'wrap', textAlign: 'center', background: 'black' }}>
         <h1 style={{ color: 'white', fontSize: '25px', marginTop: '60px' }}>Herogram Test App</h1>
 
-        <NavLink to="/Registration" style={{textDecoration: 'none'}}>
+        <NavLink to="/Login" style={{textDecoration: 'none'}}>
             <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '40px'}}>
                 <button id="buttontext" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', height: '30px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent', cursor: 'grab'}}>Sign in</button>
             </div>
@@ -23,4 +23,4 @@ const Success = () => {
   )
 }
 
-export default Success;
+export default Home;

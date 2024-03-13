@@ -7,6 +7,9 @@ import Registration from './Components/Registration';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 
+import FileSharing from './Components/FileSharing';
+
+
 const App = () => {
   return (
     <>
@@ -16,6 +19,7 @@ const App = () => {
           <Route path="/Registration" element={<Registration />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/FileSharing" element={<FileSharing />} />
         </Routes>
       </BrowserRouter>
     </>
