@@ -79,12 +79,12 @@ const Registration = () =>{
     
     return( 
             
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center", height: '100vh',background: 'black'}}>
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center", height: '90vh',background: 'black'}}>
 
             <div style={{display: 'flex', flexDirection: 'column', width: '100%', gap:'5px', alignItems: 'center', justifyContent:'center'}}>
                 <img alt='HerogramLogo' style={{width: '140px'}} src={HerogramLogo}/>
                 
-                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vh', marginBottom:'15px'}}>
+                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vh', marginBottom:'0px'}}>
                     <h1 className='specialFont' style={{paddingRight: '50px', paddingLeft: '50px', color: 'white', fontSize: '25px'}}>REGISTRATION</h1>
                 </div>
                 
@@ -326,7 +326,7 @@ const Registration = () =>{
                     <p id='error' style={{color:"red", fontSize: '10px'}}></p>
                 </div>
 
-                <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '10px'}}>
+                <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '-10px'}}>
                     {/* <NavLink to="/Player2Registration" style={{textDecoration: 'none'}}> */}
                         <button onClick={HandleSubmit} className='specialFont' id="buttontext" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', cursor: 'grab', height: '40px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent'}}>REGISTER</button>
                     {/* </NavLink> */}
