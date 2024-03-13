@@ -28,7 +28,9 @@ const Dashboard = () => {
                     console.log("Error getting document:", error);
                 });
 
-            const storageRef = ref(getStorage(), `images/`);
+            const storageRef = ref(getStorage(), `images/${userId}`);
+            console.log(userId);
+
             listAll(storageRef)
                 .then((res) => {
                     const promises = res.items.map((item) => getDownloadURL(item));

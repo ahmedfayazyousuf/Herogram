@@ -29,8 +29,9 @@ const Dashboard = () =>{
 
     function uploadImage(event){
         const file = event.target.files[0];
-        const storageRef = ref(getStorage(), `images/${file.name}`);
-        // const storageRef = ref(getStorage(), `images/${userId}/${file.name}`);
+        // const storageRef = ref(getStorage(), `images/${file.name}`);
+        
+        const storageRef = ref(getStorage(), `images/${userId}/${file.name}`); 
 
         uploadBytes(storageRef, file).then((snapshot) => {
             console.log('Uploaded a file:', snapshot);
