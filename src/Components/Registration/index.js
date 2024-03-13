@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import firebase from '../../firebase';
 import '../1_Assets/main.css';
+import HerogramLogo from '../1_Assets/HerogramLogo.webp';
 
 const Registration = () =>{
     const navigate = useNavigate();
@@ -81,7 +82,8 @@ const Registration = () =>{
         <div style={{display:"flex", justifyContent:"center", alignItems:"center", height: '100vh',background: 'black'}}>
 
             <div style={{display: 'flex', flexDirection: 'column', width: '100%', gap:'5px', alignItems: 'center', justifyContent:'center'}}>
-
+                <img alt='HerogramLogo' style={{width: '140px'}} src={HerogramLogo}/>
+                
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vh', marginBottom:'15px'}}>
                     <h1 className='specialFont' style={{paddingRight: '50px', paddingLeft: '50px', color: 'white', fontSize: '25px'}}>REGISTRATION</h1>
                 </div>

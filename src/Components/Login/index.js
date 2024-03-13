@@ -1,3 +1,5 @@
+
+import HerogramLogo from '../1_Assets/HerogramLogo.webp';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import firebase from '../../firebase';
@@ -44,7 +46,9 @@ const Login = () => {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "90vh", justifyContent: "center", alignItems: "center", flexWrap: 'wrap', textAlign: 'center', background: 'black' }}>
-            <h1 style={{ color: 'white', fontSize: '25px', marginTop: '60px' }}>Login</h1>
+            <img alt='HerogramLogo' style={{width: '140px'}} src={HerogramLogo}/>
+
+            <h1 style={{ color: 'white', fontSize: '25px', marginTop: '10px' }}>LOGIN</h1>
 
             <div style={{ width: "80%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <input className='specialFont' type="email" placeholder='EMAIL' id='email' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '15px', width: "100%", maxWidth: '700px', height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
@@ -59,7 +63,7 @@ const Login = () => {
             </div>
 
             <div style={{ display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '10px' }}>
-                <button onClick={VerifyUser} id="buttontext" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', height: '30px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent', cursor: 'grab' }}>Sign in</button>
+                <button onClick={VerifyUser} id="buttontext" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', height: '40px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent', cursor: 'grab' }}>Sign in</button>
             </div>
         </div>
     );
