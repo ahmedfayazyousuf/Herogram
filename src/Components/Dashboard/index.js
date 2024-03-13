@@ -5,6 +5,7 @@ import { getStorage, ref, uploadBytes } from 'firebase/storage'; // Import stora
 
 const Dashboard = () =>{
     const location = useLocation();
+    // eslint-disable-next-line
     const navigate = useNavigate();
     const userId = location.state.id;
     const [userData, setUserData] = useState(null);
@@ -39,7 +40,8 @@ const Dashboard = () =>{
     }
 
     function handleSubmit(){
-        navigate("/Video1", { state: { id: userId, userData } });
+        // navigate("/Video1", { state: { id: userId, userData } });
+        console.log(userData);
     }
 
     return(

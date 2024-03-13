@@ -29,8 +29,9 @@ const Login = () => {
             .then((querySnapshot) => {
                 if (!querySnapshot.empty) {
                     querySnapshot.forEach((doc) => {
+                        // eslint-disable-next-line
                         const userData = doc.data();
-                        navigate('/Dashboard', { state: { userData } });
+                        navigate('/Dashboard', {state:{id:doc.id}});
                     });
                 } else {
                     navigate('/Loser');

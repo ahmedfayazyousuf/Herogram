@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import firebase from '../../firebase';
 import '../1_Assets/main.css';
 
-const Player1Registration = () =>{
+const Registration = () =>{
     const navigate = useNavigate();
     
     function HandleSubmit() {
@@ -338,4 +338,4 @@ const Player1Registration = () =>{
     )
 }
 
-export default Player1Registration;
+export default Registration;
