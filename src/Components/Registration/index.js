@@ -88,15 +88,15 @@ const Registration = () =>{
                     <h1 className='specialFont' style={{paddingRight: '50px', paddingLeft: '50px', color: 'white', fontSize: '25px'}}>REGISTRATION</h1>
                 </div>
                 
-                <div style={{ width: "100%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <div style={{ width: "110%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                     <input className='specialFont' type="text" placeholder='NAME' id="Name" style={{opacity: '0.6', background:"white", border:"1px solid transparent", textAlign: 'center', marginBottom:'15px', width:"70%", height:'30px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px'}}/> 
                 </div>
 
-                <div style={{ width: "100%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <div style={{ width: "110%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                     <input className='specialFont' type="email" placeholder='EMAIL' id='email' style={{opacity: '0.6', background:"white", border:"1px solid transparent", textAlign: 'center', marginBottom:'15px', width:"70%", height:'30px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white' , borderRadius: '120px', fontSize: '16px'}} />
                 </div>
 
-                <div style={{width:"73%", maxWidth: '520px', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '30px',  marginBottom:'15px', }}>
+                <div style={{width:"83%", maxWidth: '520px', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '30px',  marginBottom:'15px', }}>
                     <select id="countryCode" required style = {{ width: '40%',  opacity: '0.6', background:"white", border:"1px solid transparent", textAlign: 'center', height:'34px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px 0px 0px 120px', fontSize: '16px'}}>
                         <option selected value="(+971) UAE">(+971)</option>
                         <option value="+213 Algeria">+213 Algeria</option>
@@ -318,7 +318,7 @@ const Registration = () =>{
                     <input className='specialFont' type="number" placeholder='MOBILE PHONE' id='no' style={{ opacity: '0.6', background:"white", border:"1px solid transparent", textAlign: 'center', width:"70%", height:'30px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '0px 120px 120px 0px', fontSize: '16px' }} />
                 </div>
 
-                <div style={{width:"100%",maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <div style={{width:"110%",maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                     <input className='specialFont' type="password" placeholder='PASSWORD' id='password' style={{opacity: '0.6', background:"white", border:"1px solid transparent", textAlign: 'center', marginBottom:'15px', width:"70%", height:'30px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white' , borderRadius: '120px', fontSize: '16px'}} />
                 </div>
 
