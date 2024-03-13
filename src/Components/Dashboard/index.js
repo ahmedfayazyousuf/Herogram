@@ -55,7 +55,7 @@ const Dashboard = () =>{
                 </div>  
 
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '80vw', marginTop: '-20px'}}>
-                    <input type="file" onChange={uploadImage} style={{display: 'flex', height: '100px', width: '400px', background: 'grey', borderRadius: '10px', cursor: 'grab'}} />
+                    <input type="file" onChange={uploadImage} style={{display: 'flex', height: '100px', width: '340px', background: 'grey', borderRadius: '10px', cursor: 'grab'}} />
                     <p style={{color: 'white'}}>Click or Drag Image to Upload.</p>
                 </div>
 
