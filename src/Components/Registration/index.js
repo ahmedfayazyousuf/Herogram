@@ -82,12 +82,8 @@ const Registration = () =>{
 
             <div style={{display: 'flex', flexDirection: 'column', width: '70%', gap:'5px', alignItems: 'center', justifyContent:'center'}}>
 
-                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vh', marginBottom:'-15px'}}>
+                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vh', marginBottom:'15px'}}>
                     <h1 className='specialFont' style={{paddingRight: '50px', paddingLeft: '50px', color: 'white', fontSize: '25px'}}>REGISTRATION</h1>
-                </div>
-
-                <div style={{height: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '5px'}}>
-                    <p id='error' style={{color:"red", fontSize: '10px'}}></p>
                 </div>
                 
                 <div style={{width:"100%", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
@@ -325,8 +321,11 @@ const Registration = () =>{
                     <input className='specialFont' type="password" placeholder='PASSWORD' id='password' style={{opacity: '0.6', background:"white", border:"1px solid transparent", textAlign: 'center', marginBottom:'15px', width:"70%", height:'30px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white' , borderRadius: '120px', fontSize: '16px'}} />
                 </div>
 
+                <div style={{height: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '5px'}}>
+                    <p id='error' style={{color:"red", fontSize: '10px'}}></p>
+                </div>
 
-                <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '22px'}}>
+                <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '10px'}}>
                     {/* <NavLink to="/Player2Registration" style={{textDecoration: 'none'}}> */}
                         <button onClick={HandleSubmit} className='specialFont' id="buttontext" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', cursor: 'grab', height: '40px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent'}}>REGISTER</button>
                     {/* </NavLink> */}
