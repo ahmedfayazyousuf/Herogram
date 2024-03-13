@@ -77,7 +77,7 @@ const Dashboard = () => {
     }
 
     function handleSubmit() {
-        navigate("/Video1", { state: { id: userId, userData } });
+        navigate("/", { state: { id: userId, userData } });
     }
 
     return (
