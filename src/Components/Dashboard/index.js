@@ -49,7 +49,6 @@ const Dashboard = () =>{
 
             <div style={{display: 'flex', flexDirection: 'column', width: '40%', gap:'5px', alignItems: 'center', justifyContent:'center', height: '100vh'}}>
                 
-
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '80vw', marginTop: '0px', marginBottom: '10px'}}>
                     {userData && <p style={{color: 'white', fontSize: '20px', fontWeight: '900'}}>Welcome, {userData.Name}!</p>}
                 </div>  

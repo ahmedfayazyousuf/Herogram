@@ -36,7 +36,7 @@ const Login = () => {
                         navigate('/Dashboard', {state:{id:doc.id}});
                     });
                 } else {
-                    navigate('/Loser'); 
+                    document.getElementById('error').innerHTML = "INVALID CREDENTIALS";
                 }
             })
             .catch((error) => {
@@ -55,7 +55,12 @@ const Login = () => {
             </div>
 
             <div style={{ width: "80%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                <input className='specialFont' type="password" placeholder='PASSWORD' id='password' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '15px', width: "100%", maxWidth: '700px', height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
+                <input className='specialFont' type="password" placeholder='PASSWORD' id='password' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '0px', width: "100%", maxWidth: '700px', height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
+                <p style={{color: 'white', fontSize: '10px'}}>Create an account: 
+                    <a href='https://herogramtestapp.vercel.app/Registration'>
+                        <span style={{color: 'grey'}}> Register</span>
+                    </a>
+                </p>
             </div>
 
             <div style={{height: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '5px'}}>

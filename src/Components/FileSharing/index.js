@@ -7,11 +7,12 @@ const Dashboard = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const userId = location.state ? location.state.id : ''; // Update this line
-    const [userData, setUserData] = useState(null); 
+    const [userData, setUserData] = useState(null);
     const [files, setFiles] = useState([]);
+    const [clickCounts, setClickCounts] = useState({}); // New state variable for click counts
 
     useEffect(() => {
-        if (userId) { // Add this check
+        if (userId) {
             const Users = firebase.firestore().collection("Users");
 
             Users.doc(userId).get()
@@ -34,6 +35,22 @@ const Dashboard = () => {
                     Promise.all(promises)
                         .then((urls) => {
                             setFiles(urls.map((url, index) => ({ url, name: res.items[index].name })));
+                            
+                            // Retrieve click counts from Firestore
+                            const clickCountsRef = firebase.firestore().collection("ClickCounts").doc(userId);
+                            clickCountsRef.get().then((doc) => {
+                                if (doc.exists) {
+                                    setClickCounts(doc.data());
+                                } else {
+                                    // If click counts document doesn't exist, initialize it
+                                    const initialClickCounts = {};
+                                    urls.forEach(url => {
+                                        initialClickCounts[url] = 0;
+                                    });
+                                    clickCountsRef.set(initialClickCounts);
+                                    setClickCounts(initialClickCounts);
+                                }
+                            });
                         })
                         .catch((error) => {
                             console.error('Error getting download URLs:', error);
@@ -48,7 +65,11 @@ const Dashboard = () => {
     function copyLink(url) {
         navigator.clipboard.writeText(url)
             .then(() => {
-                console.log('Link copied to clipboard:', url);
+                // Update click counts in state and Firestore
+                const updatedClickCounts = { ...clickCounts };
+                updatedClickCounts[url] = (updatedClickCounts[url] || 0) + 1;
+                setClickCounts(updatedClickCounts);
+                firebase.firestore().collection("ClickCounts").doc(userId).set(updatedClickCounts);
             })
             .catch((error) => {
                 console.error('Error copying link:', error);
@@ -71,6 +92,7 @@ const Dashboard = () => {
                             <tr style={{backgroundColor: 'black'}}>
                                 <th style={{ border: '1px solid white', color: 'white'}}>File Name</th>
                                 <th style={{ border: '1px solid white', color: 'white' }}>Actions</th>
+                                <th style={{ border: '1px solid white', color: 'white' }}>Stats</th> {/* New column header */}
                             </tr>
                         </thead>
                         <tbody>
@@ -80,6 +102,7 @@ const Dashboard = () => {
                                     <td style={{ border: '1px solid black' }}>
                                         <button onClick={() => copyLink(file.url)}>Copy Link</button>
                                     </td>
+                                    <td style={{ border: '1px solid black' }}>{clickCounts[file.url]}</td> {/* Display click count for each file */}
                                 </tr>
                             ))}
                         </tbody>
