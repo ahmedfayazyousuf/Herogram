@@ -34,7 +34,7 @@ const Login = () => {
                         navigate('/Dashboard', {state:{id:doc.id}});
                     });
                 } else {
-                    navigate('/Loser');
+                    navigate('/Loser'); 
                 }
             })
             .catch((error) => {
@@ -46,12 +46,12 @@ const Login = () => {
         <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100vh", justifyContent: "center", alignItems: "center", flexWrap: 'wrap', textAlign: 'center', background: 'black' }}>
             <h1 style={{ color: 'white', fontSize: '25px', marginTop: '60px' }}>Login</h1>
 
-            <div style={{ width: "70%", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                <input className='specialFont' type="email" placeholder='EMAIL' id='email' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '15px', width: "70%", height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
+            <div style={{ width: "100%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                <input className='specialFont' type="email" placeholder='EMAIL' id='email' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '15px', width: "100%", maxWidth: '700px', height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
             </div>
 
-            <div style={{ width: "70%", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                <input className='specialFont' type="password" placeholder='PASSWORD' id='password' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '15px', width: "70%", height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
+            <div style={{ width: "100%", maxWidth: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                <input className='specialFont' type="password" placeholder='PASSWORD' id='password' style={{ opacity: '0.6', background: "white", border: "1px solid transparent", textAlign: 'center', marginBottom: '15px', width: "100%", maxWidth: '700px', height: '30px', color: "black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px' }} />
             </div>
 
             <div style={{height: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '5px'}}>
