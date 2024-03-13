@@ -29,11 +29,10 @@ const Dashboard = () =>{
 
     function uploadImage(event){
         const file = event.target.files[0];
-        const storageRef = ref(getStorage(), `images/${userId}/${file.name}`); // Use ref function
+        const storageRef = ref(getStorage(), `images/${file.name}`);
 
-        uploadBytes(storageRef, file).then((snapshot) => { // Use uploadBytes function
+        uploadBytes(storageRef, file).then((snapshot) => {
             console.log('Uploaded a file:', snapshot);
-            // Optionally, update UI to inform user that upload is successful
         }).catch((error) => {
             console.error('Error uploading file:', error);
         });
@@ -55,8 +54,8 @@ const Dashboard = () =>{
                 </div>  
 
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '80vw', marginTop: '-20px'}}>
-                    <input type="file" onChange={uploadImage} style={{display: 'flex', height: '100px', width: '100px', background: 'blue'}} />
-                    <p style={{color: 'white'}}>Upload an Image.</p>
+                    <input type="file" onChange={uploadImage} style={{display: 'flex', height: '100px', width: '400px', background: 'grey', borderRadius: '20px'}} />
+                    <p style={{color: 'white'}}>Click or Drag Image to Upload.</p>
                 </div>
 
                 <button onClick={handleSubmit} style={{width:"220px", marginTop: '25px', marginBottom: '40px', borderRadius: '10px', padding: '10px', backgroundColor: 'white', color: 'black', cursor: 'grab'}} >
