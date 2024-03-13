@@ -6,10 +6,12 @@ const Home = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "90vh", justifyContent: "center", alignItems: "center", flexWrap: 'wrap', textAlign: 'center', background: 'black' }}>
+        {/* Company Logo  */}
         <img alt='HerogramLogo' style={{width: '140px'}} src={HerogramLogo}/>
 
         <h1 style={{ color: 'white', fontSize: '25px', marginTop: '0px' }}>Herogram Test App</h1>
 
+        {/* LINK TO LOGIN AND SIGN UP  */}
         <NavLink to="/Login" style={{textDecoration: 'none'}}>
             <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center'}}>
                 <button id="buttontext" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', height: '30px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent', cursor: 'grab'}}>Sign in</button>
