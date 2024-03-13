@@ -28,7 +28,7 @@ const Dashboard = () => {
                 });
 
             // Fetch list of files from Firebase Storage
-            const storageRef = ref(getStorage(), `images/${userId}`);
+            const storageRef = ref(getStorage(), `images/`);
             listAll(storageRef)
                 .then((res) => {
                     const promises = res.items.map((item) => getDownloadURL(item));
@@ -50,7 +50,6 @@ const Dashboard = () => {
         navigator.clipboard.writeText(url)
             .then(() => {
                 console.log('Link copied to clipboard:', url);
-                // Optionally, provide UI feedback that the link is copied
             })
             .catch((error) => {
                 console.error('Error copying link:', error);
@@ -80,7 +79,7 @@ const Dashboard = () => {
                                 <tr key={index}>
                                     <td>{file.name}</td>
                                     <td>
-                                        <button onClick={() => copyLink(file.url)}>Copy Link</button>
+                                        <button onClick={() => copyLink(file.url)}>Share Link</button>
                                     </td>
                                 </tr>
                             ))}

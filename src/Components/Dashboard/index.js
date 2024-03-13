@@ -30,6 +30,7 @@ const Dashboard = () =>{
     function uploadImage(event){
         const file = event.target.files[0];
         const storageRef = ref(getStorage(), `images/${file.name}`);
+        // const storageRef = ref(getStorage(), `images/${userId}/${file.name}`);
 
         uploadBytes(storageRef, file).then((snapshot) => {
             console.log('Uploaded a file:', snapshot);
@@ -39,8 +40,8 @@ const Dashboard = () =>{
     }
 
     function handleSubmit(){
-        // navigate("/Video1", { state: { id: userId, userData } });
-        console.log(userData);
+        navigate("/FileSharing", { state: { id: userId} });
+        // console.log(userData);
     }
 
     return(
@@ -54,7 +55,7 @@ const Dashboard = () =>{
                 </div>  
 
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '80vw', marginTop: '-20px'}}>
-                    <input type="file" onChange={uploadImage} style={{display: 'flex', height: '100px', width: '400px', background: 'grey', borderRadius: '20px'}} />
+                    <input type="file" onChange={uploadImage} style={{display: 'flex', height: '100px', width: '400px', background: 'grey', borderRadius: '10px', cursor: 'grab'}} />
                     <p style={{color: 'white'}}>Click or Drag Image to Upload.</p>
                 </div>
 
