@@ -58,7 +58,7 @@ const Login = () => {
                 <p id='error' style={{color:"red", fontSize: '10px'}}></p>
             </div>
 
-            <div style={{ display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '40px' }}>
+            <div style={{ display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '10px' }}>
                 <button onClick={VerifyUser} id="buttontext" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white', height: '30px', padding: '10px', width: '250px', backgroundColor: 'white', borderRadius: '120px', fontSize: '16px', color: '#1E1450', border: '1px solid transparent', cursor: 'grab' }}>Sign in</button>
             </div>
         </div>
