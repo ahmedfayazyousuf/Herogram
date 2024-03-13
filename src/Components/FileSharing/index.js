@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import firebase from '../../firebase'; // Import Firebase
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage'; // Import storage functions
+import 'firebase/functions'; // Import the functions module from Firebase
 
 const Dashboard = () => {
     const location = useLocation();
@@ -10,7 +11,7 @@ const Dashboard = () => {
     const [userData, setUserData] = useState(null);
     const [files, setFiles] = useState([]);
     const [clickCounts, setClickCounts] = useState({}); // New state variable for click counts
-
+    
     useEffect(() => {
         if (userId) {
             const Users = firebase.firestore().collection("Users");
@@ -29,7 +30,6 @@ const Dashboard = () => {
                 });
 
             const storageRef = ref(getStorage(), `images/${userId}`);
-            console.log(userId);
 
             listAll(storageRef)
                 .then((res) => {
@@ -64,6 +64,18 @@ const Dashboard = () => {
         }
     }, [userId]);
 
+    // Function to track image access
+    const trackImageAccess = (imageUrl) => {
+        const trackImageAccessFunction = firebase.functions().httpsCallable('trackImageAccess');
+        trackImageAccessFunction({ imageUrl })
+            .then((result) => {
+                console.log("Image access tracked successfully");
+            })
+            .catch((error) => {
+                console.error("Error tracking image access:", error);
+            });
+    };
+
     function copyLink(url) {
         navigator.clipboard.writeText(url)
             .then(() => {
@@ -72,6 +84,9 @@ const Dashboard = () => {
                 updatedClickCounts[url] = (updatedClickCounts[url] || 0) + 1;
                 setClickCounts(updatedClickCounts);
                 firebase.firestore().collection("ClickCounts").doc(userId).set(updatedClickCounts);
+
+                // Track image access
+                trackImageAccess(url);
             })
             .catch((error) => {
                 console.error('Error copying link:', error);
