@@ -27,7 +27,6 @@ const Dashboard = () => {
                     console.log("Error getting document:", error);
                 });
 
-            // Fetch list of files from Firebase Storage
             const storageRef = ref(getStorage(), `images/`);
             listAll(storageRef)
                 .then((res) => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import firebase from '../../firebase'; // Import Firebase
-import { getStorage, ref, uploadBytes } from 'firebase/storage'; // Import storage functions
+import firebase from '../../firebase'; 
+import { getStorage, ref, uploadBytes } from 'firebase/storage';
 
 const Dashboard = () =>{
     const location = useLocation();
