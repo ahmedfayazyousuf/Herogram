@@ -3,7 +3,7 @@ import firebase from '../../firebase';
 import '../1_Assets/main.css';
 import HerogramLogo from '../1_Assets/HerogramLogo.webp';
 
-const Registration = () =>{
+const Registration = () =>{ 
     const navigate = useNavigate();
     
     function HandleSubmit() {
@@ -51,6 +51,7 @@ const Registration = () =>{
             CountryCode: CountryCode,
             Number: Number,
             Password: Password,
+            View:0,
             time: firebase.firestore.FieldValue.serverTimestamp(),
         };
     
@@ -69,6 +70,7 @@ const Registration = () =>{
             CountryCode: CountryCode,
             Number: Number,
             Password: Password,
+            View: 0,
             time: firebase.firestore.FieldValue.serverTimestamp(),
         }).then(doc =>{
             // navigate('/SuccessPlayer1');

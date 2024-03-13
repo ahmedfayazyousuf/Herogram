@@ -64,18 +64,6 @@ const Dashboard = () => {
         }
     }, [userId]);
 
-    // Function to track image access
-    const trackImageAccess = (imageUrl) => {
-        const trackImageAccessFunction = firebase.functions().httpsCallable('trackImageAccess');
-        trackImageAccessFunction({ imageUrl })
-            .then((result) => {
-                console.log("Image access tracked successfully");
-            })
-            .catch((error) => {
-                console.error("Error tracking image access:", error);
-            });
-    };
-
     function copyLink(url) {
         navigator.clipboard.writeText(url)
             .then(() => {
@@ -85,8 +73,19 @@ const Dashboard = () => {
                 setClickCounts(updatedClickCounts);
                 firebase.firestore().collection("ClickCounts").doc(userId).set(updatedClickCounts);
 
-                // Track image access
-                trackImageAccess(url);
+                // Increment access count in Firestore analytics collection
+                const analyticsRef = firebase.firestore().collection("analytics").doc(url);
+                analyticsRef.get()
+                    .then((doc) => {
+                        if (doc.exists) {
+                            analyticsRef.update({ count: firebase.firestore.FieldValue.increment(1) });
+                        } else {
+                            analyticsRef.set({ count: 1 });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error updating access count:', error);
+                    });
             })
             .catch((error) => {
                 console.error('Error copying link:', error);
@@ -119,7 +118,7 @@ const Dashboard = () => {
                                     <td style={{ border: '1px solid black' }}>
                                         <button onClick={() => copyLink(file.url)}>Copy Link</button>
                                     </td>
-                                    <td style={{ border: '1px solid black' }}>{clickCounts[file.url]}</td> {/* Display click count for each file */}
+                                    <td style={{ border: '1px solid black' }}>{userData.views}</td> {/* Display click count for each file */}
                                 </tr>
                             ))}
                         </tbody>

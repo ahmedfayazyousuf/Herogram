@@ -9,6 +9,8 @@ import Dashboard from './Components/Dashboard';
 
 import FileSharing from './Components/FileSharing';
 
+import Admin from './Components/Admin';
+
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
           <Route path="/Login" element={<Login />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/FileSharing" element={<FileSharing />} />
+          <Route path="/Admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </>
