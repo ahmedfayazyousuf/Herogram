@@ -4,7 +4,7 @@ import React from 'react';
 const Home = () => {
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100vh", justifyContent: "center", alignItems: "center", flexWrap: 'wrap', textAlign: 'center', background: 'black' }}>
+    <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "90vh", justifyContent: "center", alignItems: "center", flexWrap: 'wrap', textAlign: 'center', background: 'black' }}>
         <h1 style={{ color: 'white', fontSize: '25px', marginTop: '60px' }}>Herogram Test App</h1>
 
         <NavLink to="/Login" style={{textDecoration: 'none'}}>
